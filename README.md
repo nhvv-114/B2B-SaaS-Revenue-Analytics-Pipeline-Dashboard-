@@ -1,5 +1,5 @@
 # EndeavorIQ Data Pipeline
-### Take-Home Assignment — Harsha Nagallapati
+### — Harsha Nagallapati
 
 ---
 
