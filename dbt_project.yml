@@ -1,0 +1,17 @@
+name: endeavoriq
+version: "1.0"
+config-version: 2
+profile: endeavoriq
+
+model-paths: ["models"]
+target-path: "target"
+clean-targets: ["target", "dbt_packages"]
+
+models:
+  endeavoriq:
+    staging:
+      +materialized: view
+    intermediate:
+      +materialized: view
+    marts:
+      +materialized: table

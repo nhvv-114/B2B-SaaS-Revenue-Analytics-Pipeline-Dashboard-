@@ -1,0 +1,50 @@
+sources:
+  app.accounts:
+    model: stg_app__accounts
+    key: id
+    columns: {id: id, status: status}
+
+  app.subscriptions:
+    model: stg_app__subscriptions
+    key: id
+    columns: {id: id, plan_id: plan_id, status: status, seats: seats}
+
+  app.users:
+    model: stg_app__users
+    key: id
+    columns: {id: id, account_id: account_id, status: status}
+
+  app.subscription_changes:
+    model: stg_app__subscription_changes
+    key: id
+    columns: {id: id}
+
+  app.plans:
+    model: stg_app__plans
+    key: id
+    columns: {id: id, seat_price_cents: seat_price_cents}
+
+  billing.customers:
+    model: stg_billing__customers
+    key: id
+    columns: {id: id, account_id: account_id}   # account_id = metadata.account_id (NULL when absent)
+
+  billing.invoices:
+    model: stg_billing__invoices
+    key: id
+    columns: {id: id, status: status, total: total}   # total is integer cents
+
+  billing.charges:
+    model: stg_billing__charges
+    key: id
+    columns: {id: id, status: status, amount: amount}  # amount is integer cents
+
+  billing.refunds:
+    model: stg_billing__refunds
+    key: id
+    columns: {id: id, amount: amount}  # amount is integer cents
+
+  usage.events:
+    model: stg_usage__events
+    key: event_id
+    columns: {event_id: event_id, quantity: quantity}

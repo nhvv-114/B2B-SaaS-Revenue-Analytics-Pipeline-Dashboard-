@@ -1,0 +1,9 @@
+# dbt-duckdb profile. Point `path` at the DuckDB file your EL writes to.
+# Override with the DBT_DUCKDB_PATH env var if you keep it elsewhere.
+endeavoriq:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: "{{ env_var('DBT_DUCKDB_PATH', '../pipeline.duckdb') }}"
+      threads: 4
